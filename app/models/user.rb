@@ -1,13 +1,13 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token
   before_save { self.email = email.downcase }
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: {message: "名前を入力してください。"}, length: { maximum: 50,message: "名前が長すぎです。" }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
+  validates :email, presence: {message: "emailアドレスを入力してください。"}, length: { maximum: 255 ,message: "emailアドレスが長すぎます。"},
+                    format: { with: VALID_EMAIL_REGEX ,message: "emailアドレスを入力してください。"},
                     uniqueness: { case_sensitive: false }
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  has_secure_password 
+  validates :password, presence: true, length: { minimum: 6 ,message: "パスワードは6文字以上で入力してください。"},allow_nil: true
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

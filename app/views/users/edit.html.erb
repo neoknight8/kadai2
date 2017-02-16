@@ -1,0 +1,9 @@
+<% provide(:title, "Edit user") %>
+<% provide(:button_title,'アカウント情報を更新する')%>
+
+<%= render 'profile_form' %>
+
+    <div class="gravatar_edit">
+      <%= gravatar_for(@user) %>
+      <a href="http://gravatar.com/emails" target="_blank">change</a>
+    </div>
