@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	has_many :microposts, dependent: :destroy
+
 	attr_accessor :remember_token
   before_save { self.email = email.downcase }
   validates :name, presence: {message: "名前を入力してください。"}, length: { maximum: 50,message: "名前が長すぎです。" }
@@ -31,5 +33,9 @@ class User < ActiveRecord::Base
   
   def forget
   	update_attribute(:remember_digest,nil)
+  end
+  
+  def feed
+  	Micropost.where("user_id=?",id)
   end
 end
