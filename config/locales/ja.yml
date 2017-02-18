@@ -1,6 +1,16 @@
 ---
 ja:
   activerecord:
+
+  attributes:
+    id: ID
+    created_at: 登録日時
+    updated_at: 更新日時
+    name: 名前
+    email: emailアドレス
+    response_text: 本文
+    content: 本文
+
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
