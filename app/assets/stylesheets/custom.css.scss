@@ -59,6 +59,26 @@ p {
 
 /* header */
 
+.navbar {
+	background-color: #0099ff;
+	border-color: #3e6962;
+}
+.dropdown-menu {
+	background-color: #00ccff;
+	border: 1px solid #3e6962;
+	border: 1px solid #3e6962(0, 0, 0, .15);
+	-webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+	box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+}
+.dropdown-menu .divider {
+	background-color: gold;
+}
+.navbar .navbar-nav>.open {
+color: #3e6962;
+background-color: #c3ede7;
+}
+
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -69,13 +89,14 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover{
-    color: #fff;
+    color: #000;
   	text-decoration: none;
   }
 }
 
 
 /* footer */
+
 
 footer {
   margin-top: 200px;

@@ -11,10 +11,11 @@ gem 'bcrypt','3.1.7'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 gem 'faker', '1.4.2'
 gem 'carrierwave', '0.10.0'
-gem 'mini_magick', '3.8.0'
+gem 'mini_magick', '~>4.3'
 gem 'fog', '1.36.0'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'slim-rails'
 
 
 
